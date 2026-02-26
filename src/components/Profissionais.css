@@ -1,0 +1,92 @@
+.profissionais-section {
+  position: relative;
+  background-color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.planta-fundo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  opacity: 0.15; /* planta bem suave */
+  z-index: 0;
+}
+
+.profissionais-titulo {
+  font-size: 2rem;
+  color: #143755;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1; /* acima da planta */
+}
+
+/* Card de cada profissional */
+.profissional-card {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.9); /* bloco branco transparente */
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1; /* acima da planta */
+  gap: 30px;
+}
+
+/* Informações do profissional */
+.profissional-info {
+  flex: 1;
+  text-align: left;
+}
+
+.profissional-nome {
+  font-size: 1.5rem;
+  color: #143755;
+  margin-bottom: 10px;
+}
+
+.profissional-crm {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.profissional-detalhes {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Foto do profissional */
+.profissional-foto {
+  flex: 0 0 200px; /* largura fixa da foto */
+}
+
+.profissional-foto img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* Responsivo - mobile */
+@media (max-width: 768px) {
+  .profissional-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .profissional-info {
+    text-align: center;
+  }
+
+  .profissional-foto {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
