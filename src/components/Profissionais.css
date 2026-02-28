@@ -1,92 +1,209 @@
+
 .profissionais-section {
   position: relative;
   background-color: #ffffff;
-  padding: 80px 20px;
-  text-align: center;
+  padding: 60px 20px 80px 20px;
   overflow: hidden;
 }
 
-.planta-fundo {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  opacity: 0.15; /* planta bem suave */
-  z-index: 0;
-}
-
-.profissionais-titulo {
-  font-size: 2rem;
-  color: #143755;
-  margin-bottom: 60px;
+/* Container centralizador */
+.profissionais-container {
+  max-width: 1100px;
+  margin: 0 auto;
   position: relative;
-  z-index: 1; /* acima da planta */
+  z-index: 1;
 }
 
+
+/* Título seção */
+.profissionais-titulo {
+  width: 100%;
+  margin: 0 auto 120px auto;
+  font-size: 22px;
+  color: #143755;
+  text-align: center;
+  line-height: 52px;
+}
+
+.titulo-fino {
+  font-weight: 200;
+  color: #143755;
+}
+.titulo-forte {
+  font-weight: 700;
+  color: #143755;
+}
 /* Card de cada profissional */
 .profissional-card {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.9); /* bloco branco transparente */
-  border-radius: 16px;
-  padding: 30px;
-  margin-bottom: 50px;
-  align-items: center;
-  justify-content: space-between;
+  gap: 60px;
+align-items: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 60px;
+  border-radius: 20px;
+
+  margin-bottom: 140px;
   position: relative;
-  z-index: 1; /* acima da planta */
-  gap: 30px;
+  z-index: 2;
 }
+
+.profissional-info {
+  flex: 0 0 60%;
+  text-align: center;
+}
+
+.profissional-info ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.profissional-info li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #143755;
+}
+
+.profissional-foto {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 
 /* Informações do profissional */
-.profissional-info {
-  flex: 1;
-  text-align: left;
-}
+
 
 .profissional-nome {
-  font-size: 1.5rem;
+  font-size: 28px;
   color: #143755;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .profissional-crm {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 15px;
+  font-size: 16px;
+  color: #143755;
+  margin-bottom: 25px;
 }
 
 .profissional-detalhes {
   font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
+  color: #143755;
+  line-height: 1.6;
 }
 
-/* Foto do profissional */
-.profissional-foto {
-  flex: 0 0 200px; /* largura fixa da foto */
-}
 
 .profissional-foto img {
   width: 100%;
-  border-radius: 16px;
+  max-width: 320px;
+  height: 420px;              /* força proporção vertical */
+  object-fit: cover;          /* corta excesso mantendo proporção */
+  border-radius: 24px;        /* arredondamento mais evidente */
+  display: block;
 }
+
+
 
 /* Responsivo - mobile */
 @media (max-width: 768px) {
-  .profissional-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    gap: 20px;
-  }
 
-  .profissional-info {
-    text-align: center;
+  .profissional-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: none;
   }
 
   .profissional-foto {
-    width: 80%;
-    margin: 0 auto;
+    order: -1;   /* força vir antes */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
   }
+
+  .profissional-info {
+    order: 1;
+    background-color: rgba(255,255,255,0.92);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;  /* CENTRALIZA TUDO NO MOBILE */
+  }
+
+  .profissional-info ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+  .profissional-info ul {
+  list-style-type: disc;
+}
+
+  .profissional-foto img {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+
+}
+
+.especialidades-titulo {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: #143755;
+}
+
+.especialidades-cards {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 160px;
+}
+
+.card {
+  width: 402px;
+  height: 520px;
+  background: #f4f4f2;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #143755;
+  margin-bottom: 30px;
+}
+
+.card p {
+  font-size: 15px;
+  flex-grow: 1;
+  line-height: 1.6;
+  color: #143755;
+  flex-grow: 1;
+}
+
+.card button {
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #044275;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+
+}
+
+@media (max-width: 768px) {
+
+  .especialidades-titulo {
+    font-size: 22px;
+    white-space: nowrap;
+  }
+
 }

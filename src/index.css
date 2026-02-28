@@ -66,16 +66,35 @@ body {
 }
 
 .hero-left {
-  flex: 1;
-  background-color: #f4f4f2; /* branco gelo */
+  flex: 0 0 30%;
+  background-color: #f4f4f2;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-right::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #f4f4f2 0%,
+    #f4f4f2 40%,
+    rgba(244,244,242,0.6) 70%,
+    transparent 100%
+  );
+  z-index: 1;
 }
 
 .hero-right {
-  flex: 1;
+  flex: 0 0 70%;
   background-color: #ffffff;
   position: relative;
   display: flex;
@@ -85,8 +104,9 @@ body {
 }
 
 .hero-right img {
-  width: 490px;   /* controla o tamanho no desktop */
-  max-width: 150%;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .hero-content {
@@ -113,12 +133,13 @@ body {
 }
 /* Mobile (até 3 linhas) */
 @media (max-width: 768px) {
-  .hero-left p {
-    font-size: 0.95rem;
-    line-height: 1.3; /* permite até 3 linhas */
-    max-width: 310px;
-    margin: 0 auto 30px auto;
-  }
+.hero-left p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  max-width: 300px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
 }
 
 
@@ -151,21 +172,23 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    align-items: center; /* centraliza coluna toda */
-  }
-
+.hero {
+  flex-direction: column;
+  align-items: stretch;
+}
   .hero-left,
   .hero-right {
     width: 100%;
   }
 
-  .hero-left {
-    padding: 20px;
-    text-align: center; /* garante centralização */
-  }
-
+.hero-logo {
+  width: 110px;
+  margin-bottom: 10px;
+}
+.hero-left {
+  min-height: 85vh;
+  justify-content: center;
+}
   .hero-left h1,
   .hero-left p,
   .hero-left button {
@@ -173,18 +196,14 @@ body {
     margin-right: auto;
   }
 
-  .hero-left h1 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    max-width: 90%;
-  }
+.hero-left h1 {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  max-width: 320px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
 
-  .hero-left p {
-    font-size: 1rem;
-    line-height: 1.3;
-    max-width: 90%;
-    margin-bottom: 20px;
-  }
 
   .hero-left button {
     width: 200px;  /* menor no mobile */
@@ -197,35 +216,35 @@ body {
     height: auto;
     margin-top: 20px;
   }
+  .especialidades-cards {
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Todas as plantas */
-.planta {
-  position: absolute;
-  z-index: 1;
-  opacity: 0.9;
+.card {
+  width: 85%;
+  height: auto;
+  padding: 25px;
 }
 
-/* Planta topo esquerda */
-.planta-top-left {  
-  top: 0%;  
-  left: 60%;  
-  width: 18%;  
+.card h3 {
+  font-size: 13px;
 }
 
-/* Planta topo direita */
-.planta-top-right {
-  top: 0%;  
-  left: -5%;  
-  width: 18%; 
+.card p {
+  font-size: 14px;
 }
 
-/* Planta vertical */
-.planta-vertical {
-  top: 75%;  
-  left: 28%;  
-  width: 18%; 
+.card button {
+  margin-top: 20px;
 }
+}
+
+
+
+
+
+
 
 /* Foto principal */
 .foto-principal {
@@ -253,11 +272,10 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero-logo {
-    width: 140px; /* tamanho mobile */
-    margin: 0 auto 20px auto; /* mantém centralizado */
-    display: block;
-  
+.hero-logo {
+  width: 110px;
+  margin-top: 40px;
+  margin-bottom: 15px;
 }
 }
 
@@ -301,3 +319,81 @@ body {
   transform: scale(1.1);
 }
 
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 65px; /* altura equilibrada */
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container nav {
+  display: flex;
+  gap: 50px; /* controla espaçamento real */
+}
+
+.nav-container nav a {
+  text-decoration: none;
+  color: #143755;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.menu-mobile {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 70px;
+  }
+
+  .nav-container nav a {
+    display: none; /* esconde links */
+  }
+
+ .menu-mobile {
+  display: block;
+  color: #9a8f7a;   /* marrom bem claro */
+  font-size: 22px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+   /*  */
+  .hero-right {
+    display: none;
+  }
+.navbar {
+  background: none;
+  backdrop-filter: none;
+}
+
+  .especialidades-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+
+}

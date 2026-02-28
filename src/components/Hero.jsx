@@ -1,12 +1,22 @@
-import foto from "../assets/foto-inicial.png"
+import foto from "../assets/clinica.png"
 import logo from "../assets/logo.png"
-import planta1 from "../assets/planta1.png"
-import planta2 from "../assets/planta2.png"
-import planta3 from "../assets/planta3.png"
+
 
 function Hero() {
   return (
     <>
+    <header className="navbar">
+  <div className="nav-container">
+    
+    <nav>
+  <div className="menu-mobile">☰</div>
+  <a href="#especialidades">Especialidades</a>
+  <a href="#sobre">Sobre nós</a>
+  <a href="#faq">Perguntas frequentes</a>
+  <a href="#localizacao">Localização</a>
+</nav>
+  </div>
+</header>
       <section className="hero">
         <div className="hero-left">
           <div className="hero-content">
@@ -26,9 +36,6 @@ function Hero() {
 
         <div className="hero-right">
           {/* Plantas decorativas */}
-          <img src={planta1} alt="" className="planta planta-top-left" />
-          <img src={planta2} alt="" className="planta planta-top-right" />
-          <img src={planta3} alt="" className="planta planta-vertical" />
 
           {/* Foto principal */}
           <img src={foto} alt="Profissionais da clínica" className="foto-principal" />
