@@ -27,9 +27,9 @@ function Hero() {
               <span className="titulo-forte">psiquiátrico e psicoterapia.</span>
             </h1>
             <p>
-              Clínica planejada para atender pacientes com <br />
-              conforto, privacidade e individualidade.
-            </p>
+  Clínica planejada para atender pacientes com conforto,
+  privacidade e individualidade.
+</p>
             <button>Agende agora</button>
           </div>
         </div>

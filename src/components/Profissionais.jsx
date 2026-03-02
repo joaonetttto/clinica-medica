@@ -1,10 +1,13 @@
 import prof1 from "../assets/prof1.png";
 import prof2 from "../assets/prof2.png";
 import "./profissionais.css";
+import planta from "../assets/Planta-profissional.png";
 
 function Profissionais() {
   return (
     <section className="profissionais-section">
+        <img src={planta} alt="" className="planta-bg" />
+
       <div className="profissionais-container">
 
         {/* ===================== */}
@@ -50,7 +53,7 @@ function Profissionais() {
 
         <h2 className="profissionais-titulo">
           <span className="titulo-fino">Conheça nossos </span>
-          <span className="titulo-forte">profissionais</span>
+          <span className="titulo-forte">profissionais!</span>
         </h2>
 
         {/* Profissional 1 */}
@@ -71,8 +74,10 @@ function Profissionais() {
               <li>Professor do Centro de Psicanálise de Campinas (1985 a 2005).</li>
               <li>Psicanalista e membro fundador do Instituto Therapon Adolescência, ONG (1998 a 2004).</li>
               <li>Professor do Curso de Psicanálise para Formação de Psicoterapeutas do Departamento de Psiquiatria da UNIFESP (2009 a 2012).</li>
-              <li>Atendimentos em Psicoterapia (abordagem psicanalítica) em consultório particular na Vila Mariana-SP ou via teleatendimento.</li>
             </ul>
+            <p className="profissional-texto-final">
+  Atendimentos em Psicoterapia (abordagem psicanalítica) em consultório particular na Vila Mariana-SP ou via teleatendimento.
+</p>
           </div>
           <div className="profissional-foto">
             <img src={prof1} alt="Dr. Rogério Nogueira Coelho de Souza" />
@@ -91,7 +96,17 @@ function Profissionais() {
               <li>Psiquiatra pelo Instituto de Psiquiatria do Hospital das Clínicas da Universidade de São Paulo - IPq-HCFMUSP (2021-2024).</li>
               <li>Graduação em Economia pela Universidade de São Paulo - FEA USP (2007-2011).</li>
               <li>Business Program na FH Joanneum University of Applied Sciences - Áustria (2010).</li>
-              <li>Atendimentos a pacientes adultos a partir de 18 anos em consultório particular na Vila Mariana-SP ou via telemedicina.</li>
+            </ul>
+
+            <p className="profissional-texto-final">
+  Atendimentos a pacientes adultos a partir de 18 anos em consultório particular na Vila Mariana-SP ou via telemedicina.
+</p>
+
+      <p className="profissional-subtitulo">
+  Atendimentos em Psiquiatria Geral Adulto. Foco principal na avaliação e tratamento de:
+</p>
+              <ul className="profissional-detalhes">
+
               <li>Atendimentos em Psiquiatria Geral Adulto com foco em:</li>
               <li>Transtornos ansiosos</li>
               <li>Pânico</li>

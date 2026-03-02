@@ -8,7 +8,7 @@
 
 /* Container centralizador */
 .profissionais-container {
-  max-width: 1100px;
+  max-width: 1256px;   /* igual ao Figma */
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -17,12 +17,12 @@
 
 /* Título seção */
 .profissionais-titulo {
-  width: 100%;
-  margin: 0 auto 120px auto;
-  font-size: 22px;
+  max-width: 743px;
+  margin: 0 auto 90px auto;
+  font-size: 42px;
   color: #143755;
   text-align: center;
-  line-height: 52px;
+  line-height: 1.2;
 }
 
 .titulo-fino {
@@ -36,25 +36,38 @@
 /* Card de cada profissional */
 .profissional-card {
   display: flex;
-  gap: 60px;
-align-items: center;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 60px;
+  gap: 300px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 60px 0px 60px 0px; /* remove deslocamento lateral */
   border-radius: 20px;
-
   margin-bottom: 140px;
   position: relative;
   z-index: 2;
 }
 
-.profissional-info {
-  flex: 0 0 60%;
-  text-align: center;
+.profissional-foto {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
 }
 
+.profissional-info {
+  flex: 0 0 60%;
+  text-align: left;
+}
 .profissional-info ul {
-  padding-left: 20px;
+  list-style-position: outside;
+  padding-left: 18px;
   margin: 0;
+}
+
+.profissional-info li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #143755;
 }
 
 .profissional-info li {
@@ -63,11 +76,7 @@ align-items: center;
   color: #143755;
 }
 
-.profissional-foto {
-  flex: 0 0 40%;
-  display: flex;
-  justify-content: flex-start;
-}
+
 
 
 /* Informações do profissional */
@@ -76,7 +85,7 @@ align-items: center;
 .profissional-nome {
   font-size: 28px;
   color: #143755;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   font-weight: 600;
 }
 
@@ -94,15 +103,39 @@ align-items: center;
 
 
 .profissional-foto img {
-  width: 100%;
-  max-width: 320px;
-  height: 420px;              /* força proporção vertical */
-  object-fit: cover;          /* corta excesso mantendo proporção */
-  border-radius: 24px;        /* arredondamento mais evidente */
+  width: 383px;
+  height: 561px;
+  object-fit: cover;
+  border-radius: 24px;
   display: block;
 }
 
+.planta-bg {
+  position: absolute;
+  bottom: -120px;     /* desce um pouco */
+  right: -10px;      /* deixa ela maior lateralmente */
+  height: 1900px;     /* igual ao Figma praticamente */
+  opacity: 0.45;      /* mais visível */
+  z-index: 0;
+  pointer-events: none;
+}
 
+.profissional-card {
+  flex-direction: row-reverse;
+}
+
+.profissional-texto-final {
+  margin-top: 25px;
+  line-height: 1.6;
+  color: #143755;
+}
+
+.profissional-subtitulo {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #143755;
+}
 
 /* Responsivo - mobile */
 @media (max-width: 768px) {
@@ -119,17 +152,29 @@ align-items: center;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
-  .profissional-info {
-    order: 1;
-    background-color: rgba(255,255,255,0.92);
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;  /* CENTRALIZA TUDO NO MOBILE */
-  }
+.profissional-info {
+  order: 1;
+  background-color: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  padding: 18px 20px 30px 20px; /* reduz topo */
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
 
+.profissional-info > h3,
+.profissional-info > p.profissional-crm {
+  text-align: center;
+}
+
+.profissional-info ul,
+.profissional-texto-final,
+.profissional-subtitulo {
+  text-align: left;
+}
   .profissional-info ul {
     padding-left: 0;
     list-style-position: inside;
@@ -140,11 +185,17 @@ align-items: center;
 
   .profissional-foto img {
   width: 100%;
-  max-width: 320px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  max-width: 338px;
+  height: auto;
+  border-radius: 24px;
+  object-fit: contain;
   border-radius: 24px;
   display: block;
+}
+
+.card button {
+  display: block;
+  margin: 20px auto 0 auto;
 }
 
 }
@@ -206,4 +257,38 @@ align-items: center;
     white-space: nowrap;
   }
 
+.profissional-nome {
+  font-size: 24px;
+  line-height: 1.25;
+  max-width: 340px;  
+  font-weight: 600;
+  margin: 0 auto 6px auto;
+  text-align: center;
 }
+
+.profissional-crm {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profissional-detalhes {
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.profissionais-titulo {
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 60px;
+}
+.planta-bg {
+  right: -200px;
+  bottom: 300px;     /* começa na foto 2 */
+  height: 900px;
+  opacity: 0.35;
+}
+
+}
+
