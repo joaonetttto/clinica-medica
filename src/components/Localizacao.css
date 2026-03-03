@@ -1,0 +1,62 @@
+.localizacao-section {
+  background-color: #f4f4f2;
+  padding: 100px 20px 0 20px;
+}
+
+.localizacao-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.localizacao-texto {
+  flex: 1;
+}
+
+.localizacao-texto h2 {
+  font-size: 42px;
+  color: #143755;
+  margin-bottom: 20px;
+}
+
+.localizacao-texto span {
+  font-weight: 700;
+}
+
+.localizacao-texto p {
+  margin-bottom: 15px;
+  color: #143755;
+  line-height: 1.6;
+}
+
+.btn-agendar {
+  background-color: #143755;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.localizacao-imagem img {
+  width: 400px;
+  border-radius: 20px;
+}
+
+.localizacao-mapa {
+  margin-top: 60px;
+}
+
+.localizacao-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #666;
+}

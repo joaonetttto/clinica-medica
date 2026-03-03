@@ -35,8 +35,8 @@
 }
 /* Card de cada profissional */
 .profissional-card {
-  display: flex;
-  gap: 300px;
+   display: flex;
+  gap: 300px; /* ajuste fino */
   align-items: center;
   background: rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(14px);
@@ -57,6 +57,8 @@
 .profissional-info {
   flex: 0 0 60%;
   text-align: left;
+    transform: translateX(-220px);
+
 }
 .profissional-info ul {
   list-style-position: outside;
@@ -86,7 +88,7 @@
   font-size: 28px;
   color: #143755;
   margin-bottom: 5px;
-  font-weight: 600;
+  font-weight: 100;
 }
 
 .profissional-crm {
@@ -147,21 +149,21 @@
     background: none;
   }
 
-  .profissional-foto {
-    order: -1;   /* força vir antes */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
+.profissional-foto {
+  order: -1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
 
 .profissional-info {
   order: 1;
   background-color: rgba(255,255,255,0.55);
   backdrop-filter: blur(10px);
-  padding: 18px 20px 30px 20px; /* reduz topo */
+  padding: 10px 20px 25px 20px;
   max-width: 360px;
-  margin: 0 auto;
+  margin: -20px auto 0 auto;
   border-radius: 20px;
 }
 
